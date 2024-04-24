@@ -94,7 +94,7 @@ export default function IndexPage() {
   };
 
   return (
-    <SafeAreaView style={{backgroundColor: appSettingsState.isDay ? COLORS.light.backgroundColor : COLORS.dark.backgroundColor}}>
+    <SafeAreaView style={{height: '100%', backgroundColor: appSettingsState.isDay ? COLORS.light.backgroundColor : COLORS.dark.backgroundColor}}>
       <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl tintColor={appSettingsState.isDay ? COLORS.dark.backgroundColor : COLORS.light.backgroundColor} refreshing={isRefreshing} onRefresh={onRefresh} />}>
         <View style={styles.container}>
           <Stack.Screen
