@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   listItem: {
     padding: 16,
-    height: 52,
+    height: 54,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
