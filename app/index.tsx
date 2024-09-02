@@ -42,11 +42,11 @@ export default function IndexPage() {
 
   useFocusEffect(useCallback(() => {
     // This will run when screen is `focused` or mounted.
-    StatusBar.setBarStyle(appSettingsState.isDay ? 'dark-content' : 'light-content');
+    StatusBar.setBarStyle(appSettingsState.isDay ? 'dark-content' : 'light-content', true);
   
     // This will run when screen is `blured` or unmounted.
     return () => {
-      StatusBar.setBarStyle('dark-content');
+      StatusBar.setBarStyle('dark-content', true);
     }
   }, [appSettingsState.isDay]));
 
@@ -54,7 +54,7 @@ export default function IndexPage() {
     if (isSettingsLoaded) {
       setIsLoading(true);
       loadWeatherData().then(() => {
-        StatusBar.setBarStyle(appSettingsState.isDay ? 'dark-content' : 'light-content');
+        StatusBar.setBarStyle(appSettingsState.isDay ? 'dark-content' : 'light-content', true);
       });
     }
   }, [isSettingsLoaded]);
@@ -118,8 +118,8 @@ export default function IndexPage() {
           <HourlyWeatherList /> : null}
         {appSettingsState.weatherData != undefined && appSettingsState.weatherData != null ?
           <DailyWeatherList /> : null}
+        <StatusBar barStyle={appSettingsState.isDay ? 'dark-content' : 'light-content' } />
       </ScrollView>
-      <StatusBar barStyle={appSettingsState.isDay ? 'dark-content' : 'light-content'} />
     </SafeAreaView>
   );
 }

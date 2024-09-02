@@ -4,6 +4,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useNavigation } from 'expo-router';
 import { useAppSettings } from './contexts/AppSettingsContext';
 import useWeather from './hooks/useWeather';
+import appInfo from '../package.json';
 
 export default function SettingsPage() {
   const { appSettingsState, setIsLoading, setIsImperial } = useAppSettings();
@@ -13,7 +14,7 @@ export default function SettingsPage() {
   const showAbout = () => {
     Alert.alert(
       'About Weather',
-      `Version: 1.0\n
+      `Version: ${appInfo.version}\n
 A weather app made in React Native using Open Meteo (https://open-meteo.com/) API.\n
 Please visit the GitHub repo for more info.\n
 © 2024 Carlos E. Torres`,
