@@ -17,7 +17,7 @@ export default function SettingsPage() {
       `Version: ${appInfo.version}\n
 A weather app made in React Native using Open Meteo (https://open-meteo.com/) API.\n
 Please visit the GitHub repo for more info.\n
-© 2024 Carlos E. Torres`,
+© 2024-2025 Carlos E. Torres`,
       [
         {
           text: 'Visit my website',
